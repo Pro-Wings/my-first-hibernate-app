@@ -16,11 +16,12 @@
     <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
     <property name="show_sql">true</property>
     <property name="format_sql">true</property>
-    <property name="hbm2ddl.auto">update</property>
+    <property name="hbm2ddl.auto">create</property>
     
     <!--3- mapping details -->
-    <mapping resource="Student.hbm.xml"/>
-    <!-- mapping class="com.mcnz.jpa.examples.Player" / -->
+    <!-- <mapping resource="Student.hbm.xml"/> -->
+    
+    <mapping class="com.prowings.entity.Student" />
     
   </session-factory>
 </hibernate-configuration>
