@@ -11,10 +11,10 @@ public class TestHibernateApp {
 	
 	public static void main(String[] args) {
 		
-		Student std1 = new Student();
-		std1.setRoll(10);
-		std1.setName("Ram");
-		std1.setAddress("Pune");
+//		Student std1 = new Student();
+//		std1.setRoll(30);
+//		std1.setName("AAA");
+//		std1.setAddress("Dubai");
 		
 		Configuration conf = new Configuration();
 		
@@ -26,10 +26,15 @@ public class TestHibernateApp {
 		
 		Transaction txn = session.beginTransaction();
 		
-		session.save(std1);
+//		session.save(std1);
+		
+//		Student s = session.get(Student.class, 1);
+		Student s = session.load(Student.class, 10);
 		
 		txn.commit();
 		
+		
+		System.out.println("student data from DB for id 1 : "+s);
 		System.out.println("student object saved to DB successfully!!!");
 		session.close();
 		
