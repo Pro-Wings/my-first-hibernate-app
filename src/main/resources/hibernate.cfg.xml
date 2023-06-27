@@ -22,6 +22,7 @@
     <!-- <mapping resource="Student.hbm.xml"/> -->
     
     <mapping class="com.prowings.entity.Student" />
+    <mapping class="com.prowings.entity.Student2" />
     
   </session-factory>
 </hibernate-configuration>
