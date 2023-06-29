@@ -9,7 +9,7 @@ import org.hibernate.cfg.Configuration;
 import com.prowings.entity.Student;
 import com.prowings.entity.Student2;
 
-public class TestHibernateAppFlush {
+public class TestHibernateAppClearMethod {
 
 	public static void main(String[] args) {
 
@@ -24,11 +24,16 @@ public class TestHibernateAppFlush {
 		SessionFactory sf = conf.buildSessionFactory();
 		Session session = sf.openSession();
 		Transaction txn = session.beginTransaction();
-		session.setHibernateFlushMode(FlushMode.ALWAYS);
 		
 		session.save(std1);
-//		session.flush();
 		
+		
+//		session.clear();
+		session.evict(std1);
+		
+		Student2 s =session.get(Student2.class, 4);
+		System.out.println(">>>>>>>>>>>  "+s);
+
 		txn.commit();
 		
 		session.close();
